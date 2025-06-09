@@ -13,10 +13,10 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -rf *.o
+	@rm -rf *.o
 
 fclean: clean
-	rm $(NAME)
+	@rm $(NAME)
 
 re: fclean all
 
