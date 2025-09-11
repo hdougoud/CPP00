@@ -1,6 +1,6 @@
 NAME	= PhoneBook
 CC		= g++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
 
 SRCS		= Contact.cpp main.cpp PhoneBook.cpp
 OBJECT	= $(SRCS:.cpp=.o)
@@ -9,7 +9,7 @@ all: $(NAME)
 $(NAME) : $(OBJECT)
 	$(CC) $(FLAGS) -o $(NAME) $(OBJECT)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+%.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
