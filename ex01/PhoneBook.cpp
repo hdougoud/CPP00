@@ -50,19 +50,6 @@ void	PhoneBook::search_contact() const
 	std::cout << std::endl;
 	std::cout << "Select the contact you want to visualize" << std::endl;
 	std::getline(std::cin, entry);
-	try
-	{
-		selection = (std::stoi(entry) - 1);
-		if (selection < 0 || selection > 7 || selection >= _contact_idx)
-		{
-			std::cout << "Invalid input" << std::endl;
-			return;
-		}
-	}
-	catch(std::logic_error)
-	{
-		std::cout << "Invalid argument " << entry << " is invalid entry" << std::endl;
-		return;
-	}
+	if (entry.c_str())
 	_contacts[selection].show_contact_info(selection);
 }
